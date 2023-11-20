@@ -1,8 +1,16 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <algorithm>  
 
 using namespace std;
+
+// Fastest Solution
+int FastMajorityElement(vector<int>& nums) {
+    sort(nums.begin(), nums.end());
+    int n = nums.size();
+    return nums[n/2];
+}
 
 // MY SOLUTION
 int majorityElement(vector<int>& nums) {
@@ -40,6 +48,7 @@ int main() {
 
   // Print majority element
   cout << majorityElement(vect) << endl;
+  cout << FastMajorityElement(vect) << endl;
 
   return 0;
 }
